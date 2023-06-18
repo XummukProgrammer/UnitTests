@@ -1,6 +1,8 @@
 ﻿#ifndef _UNIT_TESTS_TESTS_MANAGER_HEADER_
 #define _UNIT_TESTS_TESTS_MANAGER_HEADER_
 
+#include <UnitTests/TestUnitResult.hpp>
+
 #include <list>
 #include <memory>
 
@@ -12,6 +14,7 @@ namespace UnitTests
 	{
 	public:
 		using CTestUnitPtr = std::unique_ptr<CTestUnit>;
+		using CTestUnitResultPtr = std::unique_ptr<CTestUnitResult>;
 
 	public:
 		CTestsManager() = default;
@@ -24,6 +27,7 @@ namespace UnitTests
 
 	private:
 		std::list<CTestUnitPtr> _Tests;
+		std::list<CTestUnitResultPtr> _Results;
 	};
 }
 

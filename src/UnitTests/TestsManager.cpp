@@ -2,6 +2,8 @@
 
 #include <UnitTests/TestUnit.hpp>
 
+#include <iostream>
+
 namespace UnitTests
 {
     void CTestsManager::AddTest(CTestUnitPtr&& pTest)
@@ -13,7 +15,12 @@ namespace UnitTests
     {
         for (auto& pTest : _Tests)
         {
-            pTest->OnExecute();
+            auto&& pResult = pTest->OnExecute();
+
+            // Show test message
+            std::cout << "Test status '" << pResult->GetTestName() << "': " << pResult->GetString() << std::endl;
+
+            _Results.push_back(std::move(pResult));
         }
     }
 }
