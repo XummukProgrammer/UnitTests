@@ -18,8 +18,8 @@
 #define UNIT_TEST_SUCCESS_RESULT \
 	return std::make_unique<UnitTests::CUnitTestSuccessResult>();
 
-#define UNIT_TEST_FAILED_RESULT \
-	return std::make_unique<UnitTests::CUnitTestFailedResult>();
+#define UNIT_TEST_FAILED_RESULT(message) \
+	return std::make_unique<UnitTests::CUnitTestFailedResult>(message);
 
 #define BEGIN_UNIT_TEST_CLASS(cls) \
 	std::unique_ptr<UnitTests::CUnitTestResult> cls ## _OnExecute(); \
@@ -43,6 +43,13 @@
 
 #define END_UNIT_TEST_CLASS \
 		UNIT_TEST_SUCCESS_RESULT \
+	}
+
+
+#define UNIT_TEST_CHECK(expr) \
+	if (!(expr)) \
+	{ \
+		UNIT_TEST_FAILED_RESULT("Bad expression: " # expr) \
 	}
 
 #endif // _UNIT_TESTS_DEFINES_HEADER_

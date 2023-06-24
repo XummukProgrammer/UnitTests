@@ -4,7 +4,7 @@
 
 BEGIN_UNIT_TEST_CLASS(CFirstTest)
 {
-	std::cout << "First!" << std::endl;
+	UNIT_TEST_CHECK(5 == 6)
 }
 END_UNIT_TEST_CLASS
 
