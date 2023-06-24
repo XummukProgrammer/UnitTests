@@ -8,11 +8,11 @@ namespace UnitTests
 	class CUnitTestSuccessResult final : public CUnitTestResult
 	{
 	public:
-		CUnitTestSuccessResult(const std::string& TestName);
+		CUnitTestSuccessResult() = default;
 		~CUnitTestSuccessResult() = default;
 
 	public:
-		std::string GetString() const { return "SUCCESS"; }
+		std::string GetString() const override { return "SUCCESS"; }
 	};
 }
 

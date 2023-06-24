@@ -26,8 +26,16 @@ namespace UnitTests
 		void Execute();
 
 	private:
+		void Reset();
+
+		void OnTestSuccessResult(CUnitTestPtr::pointer pTest);
+		void OnTestFailedResult(CUnitTestPtr::pointer pTest, const std::string& Error);
+
+	private:
 		std::list<CUnitTestPtr> _Tests;
-		std::list<CUnitTestResultPtr> _Results;
+		int _CurrentTestIndex;
+		int _SuccessTestsCount;
+		int _FailedTestsCount;
 	};
 }
 

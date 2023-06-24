@@ -15,7 +15,7 @@ public:
 	std::unique_ptr<UnitTests::CUnitTestResult> OnExecute() override
 	{
 		std::cout << "First!" << std::endl;
-		return std::make_unique<UnitTests::CUnitTestSuccessResult>(GetName());
+		return std::make_unique<UnitTests::CUnitTestSuccessResult>();
 	}
 };
 
@@ -32,7 +32,7 @@ public:
 	std::unique_ptr<UnitTests::CUnitTestResult> OnExecute() override
 	{
 		std::cout << "Second!" << std::endl;
-		return std::make_unique<UnitTests::CUnitTestSuccessResult>(GetName());
+		return std::make_unique<UnitTests::CUnitTestFailedResult>();
 	}
 };
 

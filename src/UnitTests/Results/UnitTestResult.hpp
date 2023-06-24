@@ -8,17 +8,11 @@ namespace UnitTests
 	class CUnitTestResult
 	{
 	public:
-		CUnitTestResult(const std::string& TestName);
+		CUnitTestResult() = default;
 		virtual ~CUnitTestResult() = default;
 
 	public:
 		virtual std::string GetString() const = 0;
-
-	public:
-		const std::string& GetTestName() const;
-
-	private:
-		std::string _TestName;
 	};
 }
 
