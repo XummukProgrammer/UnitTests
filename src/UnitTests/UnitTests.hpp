@@ -1,9 +1,10 @@
 ﻿#ifndef _UNIT_TESTS_HEADER_
 #define _UNIT_TESTS_HEADER_
 
-#include <UnitTests/TestsManager.hpp>
-#include <UnitTests/TestUnit.hpp>
-#include <UnitTests/TestUnitSuccessResult.hpp>
-#include <UnitTests/TestUnitFailedResult.hpp>
+#include <UnitTests/Core/UnitTest.hpp>
+#include <UnitTests/Core/UnitTestsManager.hpp>
+
+#include <UnitTests/Results/UnitTestSuccessResult.hpp>
+#include <UnitTests/Results/UnitTestFailedResult.hpp>
 
 #endif // _UNIT_TESTS_HEADER_

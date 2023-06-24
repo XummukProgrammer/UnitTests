@@ -1,20 +1,22 @@
 
 set(FILES_HEADERS
 	src/UnitTests/UnitTests.hpp
-	src/UnitTests/TestsManager.hpp
-	src/UnitTests/TestUnit.hpp
-	src/UnitTests/TestUnitResult.hpp
-	src/UnitTests/TestUnitSuccessResult.hpp
-	src/UnitTests/TestUnitFailedResult.hpp
+	
+	src/UnitTests/Core/UnitTest.hpp
+	src/UnitTests/Core/UnitTestsManager.hpp
+	
+	src/UnitTests/Results/UnitTestResult.hpp
+	src/UnitTests/Results/UnitTestSuccessResult.hpp
+	src/UnitTests/Results/UnitTestFailedResult.hpp
 )
 
 set(FILES_SOURCES
-	src/UnitTests/UnitTests.cpp
-	src/UnitTests/TestsManager.cpp
-	src/UnitTests/TestUnit.cpp
-	src/UnitTests/TestUnitResult.cpp
-	src/UnitTests/TestUnitSuccessResult.cpp
-	src/UnitTests/TestUnitFailedResult.cpp
+	src/UnitTests/Core/UnitTest.cpp
+	src/UnitTests/Core/UnitTestsManager.cpp
+	
+	src/UnitTests/Results/UnitTestResult.cpp
+	src/UnitTests/Results/UnitTestSuccessResult.cpp
+	src/UnitTests/Results/UnitTestFailedResult.cpp
 )
 
 set(FILES_EXECUTABLE

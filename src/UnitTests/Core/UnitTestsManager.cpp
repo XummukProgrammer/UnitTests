@@ -1,17 +1,17 @@
-﻿#include "TestsManager.hpp"
+﻿#include "UnitTestsManager.hpp"
 
-#include <UnitTests/TestUnit.hpp>
+#include <UnitTests/Core/UnitTest.hpp>
 
 #include <iostream>
 
 namespace UnitTests
 {
-    void CTestsManager::AddTest(CTestUnitPtr&& pTest)
+    void CUnitTestsManager::AddTest(CUnitTestPtr&& pTest)
     {
         _Tests.push_back(std::move(pTest));
     }
 
-    void CTestsManager::Execute()
+    void CUnitTestsManager::Execute()
     {
         for (auto& pTest : _Tests)
         {

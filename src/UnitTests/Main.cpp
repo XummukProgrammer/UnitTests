@@ -2,43 +2,43 @@
 
 #include <iostream>
 
-class CFirstTest final : public UnitTests::CTestUnit
+class CFirstTest final : public UnitTests::CUnitTest
 {
 public:
 	CFirstTest(const std::string& TestName)
-		: CTestUnit(TestName)
+		: CUnitTest(TestName)
 	{
 	}
 	~CFirstTest() = default;
 
 public:
-	std::unique_ptr<UnitTests::CTestUnitResult> OnExecute() override
+	std::unique_ptr<UnitTests::CUnitTestResult> OnExecute() override
 	{
 		std::cout << "First!" << std::endl;
-		return std::make_unique<UnitTests::CTestUnitSuccessResult>(GetName());
+		return std::make_unique<UnitTests::CUnitTestSuccessResult>(GetName());
 	}
 };
 
-class CSecondTest final : public UnitTests::CTestUnit
+class CSecondTest final : public UnitTests::CUnitTest
 {
 public:
 	CSecondTest(const std::string& TestName)
-		: CTestUnit(TestName)
+		: CUnitTest(TestName)
 	{
 	}
 	~CSecondTest() = default;
 
 public:
-	std::unique_ptr<UnitTests::CTestUnitResult> OnExecute() override
+	std::unique_ptr<UnitTests::CUnitTestResult> OnExecute() override
 	{
 		std::cout << "Second!" << std::endl;
-		return std::make_unique<UnitTests::CTestUnitSuccessResult>(GetName());
+		return std::make_unique<UnitTests::CUnitTestSuccessResult>(GetName());
 	}
 };
 
 int main()
 {
-	UnitTests::CTestsManager testsManager;
+	UnitTests::CUnitTestsManager testsManager;
 	testsManager.AddTest(std::make_unique<CFirstTest>("FirstTest"));
 	testsManager.AddTest(std::make_unique<CSecondTest>("SecondTest"));
 	testsManager.Execute();
