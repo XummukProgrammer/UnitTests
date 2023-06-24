@@ -2,45 +2,26 @@
 
 #include <iostream>
 
-class CFirstTest final : public UnitTests::CUnitTest
+BEGIN_UNIT_TEST_CLASS(CFirstTest)
 {
-public:
-	CFirstTest(const std::string& TestName)
-		: CUnitTest(TestName)
-	{
-	}
-	~CFirstTest() = default;
+	std::cout << "First!" << std::endl;
+}
+END_UNIT_TEST_CLASS
 
-public:
-	std::unique_ptr<UnitTests::CUnitTestResult> OnExecute() override
-	{
-		std::cout << "First!" << std::endl;
-		return std::make_unique<UnitTests::CUnitTestSuccessResult>();
-	}
-};
-
-class CSecondTest final : public UnitTests::CUnitTest
+BEGIN_UNIT_TEST_CLASS(CSecondTest)
 {
-public:
-	CSecondTest(const std::string& TestName)
-		: CUnitTest(TestName)
-	{
-	}
-	~CSecondTest() = default;
-
-public:
-	std::unique_ptr<UnitTests::CUnitTestResult> OnExecute() override
-	{
-		std::cout << "Second!" << std::endl;
-		return std::make_unique<UnitTests::CUnitTestFailedResult>();
-	}
-};
+	std::cout << "Second!" << std::endl;
+}
+END_UNIT_TEST_CLASS
 
 int main()
 {
-	UnitTests::CUnitTestsManager testsManager;
-	testsManager.AddTest(std::make_unique<CFirstTest>("FirstTest"));
-	testsManager.AddTest(std::make_unique<CSecondTest>("SecondTest"));
-	testsManager.Execute();
+	BEGIN_UNIT_TESTS
+	{
+		ADD_UNIT_TEST(CFirstTest)
+		ADD_UNIT_TEST(CSecondTest)
+	}
+	END_UNIT_TESTS
+
 	return 0;
 }

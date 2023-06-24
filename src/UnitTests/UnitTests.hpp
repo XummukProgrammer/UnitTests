@@ -7,4 +7,6 @@
 #include <UnitTests/Results/UnitTestSuccessResult.hpp>
 #include <UnitTests/Results/UnitTestFailedResult.hpp>
 
+#include <UnitTests/UnitTestsDefines.hpp>
+
 #endif // _UNIT_TESTS_HEADER_

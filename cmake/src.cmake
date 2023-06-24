@@ -1,6 +1,7 @@
 
 set(FILES_HEADERS
 	src/UnitTests/UnitTests.hpp
+	src/UnitTests/UnitTestsDefines.hpp
 	
 	src/UnitTests/Core/UnitTest.hpp
 	src/UnitTests/Core/UnitTestsManager.hpp
